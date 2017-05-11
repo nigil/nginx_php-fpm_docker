@@ -1,0 +1,27 @@
+server {
+   listen           80;
+   listen           [::]:80 default_server ipv6only=on;
+   server_name      www.itrend.ai;
+   root             /app;
+   index            index.php index.html index.htm;
+
+   # Specify log locations for current site
+   access_log   /app/logs/access.log;
+   error_log    /app/logs/error.log warn;
+
+    # Disable logging for robots.txt
+    location = /robots.txt {
+        allow all;
+        log_not_found off;
+        access_log off;
+        expires 1y;
+        add_header Cache-Control public,max-age=259200;
+    }
+
+    # Deny all attempts to access hidden files such as .htaccess, .htpasswd, .DS_Store (Mac).
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+}

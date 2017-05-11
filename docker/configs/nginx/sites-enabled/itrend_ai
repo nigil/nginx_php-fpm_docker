@@ -5,10 +5,6 @@ server {
    root             /app;
    index            index.php index.html index.htm;
 
-   # Specify log locations for current site
-   access_log   /app/logs/access.log;
-   error_log    /app/logs/error.log warn;
-
     # Disable logging for robots.txt
     location = /robots.txt {
         allow all;

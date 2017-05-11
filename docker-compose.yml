@@ -2,8 +2,6 @@ php7-fpm:
     image: bopoh24/php7-fpm
     restart: always
     container_name: php7-fpm
-    log_opt:
-        max-size: 5m
     net: host
     volumes:
       - .:/app
@@ -15,8 +13,6 @@ nginx:
     image: nginx
     restart: always
     container_name: nginx
-    log_opt:
-        max-size: 5m
     ports:
       - "443:443"
       - "80:80"

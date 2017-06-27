@@ -2,6 +2,7 @@ server {
    listen           80;
    listen           [::]:80 default_server ipv6only=on;
    server_name      www.itrend.ai;
+   server_name      itrend.ai;
    root             /app;
    index            index.php index.html index.htm;
 
